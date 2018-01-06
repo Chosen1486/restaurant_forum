@@ -14,14 +14,16 @@
          <thead>
            <tr>
              <th bgcolor="#81F79F">#</th>
+             <th bgcolor="#FFFF33">Category</th>>
              <th bgcolor="#A9E2F3">Name</th>
-             <th bgcolor="#E2A9F3">#</th>
+             <th bgcolor="#E2A9F3">Action</th>
            </tr>
          </thead>
          <tbody>
            <% @restaurants.each do |restaurant| %>
            <tr>
              <th scope="row"><%= restaurant.id %></th>
+             <td><%= restaurant.category.name %></td>
              <td><%= restaurant.name %></td>
              <td>
                <%= link_to 'Show', admin_restaurant_path(restaurant) %>
