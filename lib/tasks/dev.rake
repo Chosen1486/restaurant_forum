@@ -21,7 +21,9 @@ namespace :dev do
       user_name = FFaker::Name.first_name
       User.create!(
         email: "#{user_name}@hotmail.com",
-        password: "qazwsx" 
+        password: "qazwsx",
+        name: "#{user_name}",
+        intro:  FFaker::Lorem.sentence
       )
     end
     puts "have created fake users"
