@@ -17,10 +17,30 @@
         <% end %>
       </div>
       <div class="clearfix"></div>
-      
-    
-      
-    </div>
 
+      <hr>
+      <h3>已評論<%= @commented_restaurants.count %>間餐廳</h3>
+        <div>
+          <% @commented_restaurants.each do |restaurant| %>
+            <div class="col-md-1 col-sm-2 text-center user-item">
+              <%= link_to restaurant_path(restaurant) do %>
+                <div class="my-restaurant">
+                  <div class="my-restaurant-img">
+                    <% if restaurant.image? %>
+                      <%= image_tag restaurant.image, class: "img-responsive img-rounded" %>
+                    <% else %>
+                      <img src="http://via.placeholder.com/50x50" class="img-responsive img-rounded">
+                    <% end %>                    
+                  </div>
+                  <div>
+                    <%= restaurant.name %>
+                  
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+    </div>
   </div>
 </div>
